@@ -1,0 +1,90 @@
+body{
+        background-color: #1877f2;
+        
+    }
+    form input{
+        height: 52px;
+        width: 364px;
+        margin: 5px;
+        border-radius: 5px;
+
+    }
+    #mail{
+        padding: 5px 10px;
+        font-size: 17px;
+
+    }
+    #şifre{
+        padding: 5px 10px;
+        font-size: 17px;
+    }
+    #giriş{
+        background-color: #1877f2;
+        border: #1877f2;
+        color: white;
+        font-size: 20px;
+        font-weight: 600;
+    }
+    #div6{
+        width: max-content;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: white;
+        border-radius: 5px;
+        padding: 10px 0;
+
+    }
+    form{
+        display: flex;
+        flex-direction: column;
+
+    }
+    form input{
+        border: solid grey 1px;
+
+    }
+    #div5{
+        text-align: center;
+        width: min-content;
+    }
+    hr{
+        width: 350px;
+        height: 1px;
+        background-color: grey;
+    }
+   
+    #p1 a{
+        color: #1877f2;
+        
+    }
+    #p1{
+        padding-bottom: 16px;
+    }
+    #p2{
+        
+        width: 190px;
+        padding: 15px;
+        background-color: #42b72a;
+        border-radius: 5px;
+    }
+    #p2 a{
+        
+        color: white;
+        font-size: 17px;
+        font-weight: 600;
+    }
+    #div7 p{
+        margin: 10px;
+        
+    }
+    #div8{
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+    }
+    #div5 p{
+        font-size: 14px;
+        margin-top: 30px;
+        background-color: #42b72a;
+    }
