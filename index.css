@@ -143,10 +143,20 @@
         font-size: 14px;
         background-color: white;
         height: auto;
+        width: auto;
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        padding: 0 24%;
+        padding: 0 43px;
+        
+    }
+    #div2_0{
+        margin: 0 ;
+
+    }
+    #div2_2{
+        padding-bottom: 4%;
+        
 
     }
     #div2_1{
@@ -174,8 +184,8 @@
         background-color: rgba(128, 128, 128, 0.452);
         height: 1px;
         width: 100%;
-        margin: 15px 0;
-      
+        margin: 10px 0;
+        
     }
     #div2_2 li a{
         color: rgba(128, 128, 128, 0.863);
