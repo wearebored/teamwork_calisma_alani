@@ -5,3 +5,4 @@
 // ekleme
 // to
 // toplamalar
+// beklemede
