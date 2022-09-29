@@ -3,4 +3,4 @@
 // hazır
 
 // ekleme
-// topla
+// to
