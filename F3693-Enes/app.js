@@ -1,2 +1,3 @@
 // deneme
 // eklemem
+// hazır
