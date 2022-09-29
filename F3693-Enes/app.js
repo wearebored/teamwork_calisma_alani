@@ -4,3 +4,4 @@
 
 // ekleme
 // to
+// toplamalar
