@@ -1,4 +1,4 @@
-function Palindrom1(a, b) {
+export function Palindrom1(a, b) {
   const num1 = a;
   const num2 = b;
   let sayılar = [];
@@ -9,11 +9,13 @@ function Palindrom1(a, b) {
   for (let i of sayılar) {
     if (i == i.toString().split("").reverse().join("")) {
       palindrom.push(i);
+      palindrom.push("\n");
     }
   }
+  palindrom.pop()
   return palindrom;
 }
-function Palindrom2(a, b) {
+export function Palindrom2(a, b) {
   const num1 = a;
   const num2 = b;
   let sayılar = [];
@@ -25,6 +27,7 @@ function Palindrom2(a, b) {
   for (let i of sayılar) {
     if (i.toString()[0] == i % 10) {
       palindrom.push(i);
+      palindrom.push("\n");
     }
   }
   return palindrom;
