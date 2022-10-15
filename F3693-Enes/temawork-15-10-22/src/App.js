@@ -4,6 +4,7 @@ import Header from "./components/Header/Header";
 import Button from "./components/Header/Button";
 import Task from "./components/Tasks/Task";
 import { data } from "./helper/data";
+import "./app.scss";
 function App() {
   const [toggleShow, setToggleShow] = useState(false);
   const [tasks, setTasks] = useState(data);

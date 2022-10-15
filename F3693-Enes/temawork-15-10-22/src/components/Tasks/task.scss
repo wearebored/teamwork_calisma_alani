@@ -1,0 +1,41 @@
+.notask {
+  margin: 2rem;
+}
+
+.taskitem {
+  width: 87%;
+  margin: auto;
+  margin-bottom: 1rem;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .textday {
+    padding: 1rem;
+    p {
+      display: flex;
+      align-items: center;
+      height: 1.5rem;
+      margin-left: 0.5rem;
+      text-align: left;
+    }
+    .kalin {
+      font-weight: 700;
+      font-size: 1.1rem;
+    }
+  }
+  div {
+    button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 1.6rem;
+      height: 1.6rem;
+      margin: 1.5rem;
+      font-size: 1.2rem;
+      color: red;
+      background-color: rgba(240, 248, 255, 0);
+      border: solid 0px;
+    }
+  }
+}

@@ -1,5 +1,6 @@
 import React from "react";
 import { data } from "../../helper/data";
+import "./task.scss";
 
 function Taskitem({ taskItem, setTasks }) {
   function onClickdelet(e) {
@@ -13,9 +14,9 @@ function Taskitem({ taskItem, setTasks }) {
     }
   }
   return (
-    <div id={taskItem.id}>
-      <div>
-        <p>{taskItem.text}</p>
+    <div className="taskitem" id={taskItem.id}>
+      <div className="textday">
+        <p className="kalin">{taskItem.text}</p>
         <p>{taskItem.day}</p>
       </div>
       <div>

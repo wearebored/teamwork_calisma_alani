@@ -1,10 +1,9 @@
-
-
+import "./buton.scss";
 const Header = () => {
   return (
-    <div>
+    <header>
       <h1>Task Tracker</h1>
-      </div>
+    </header>
   );
 };
 
