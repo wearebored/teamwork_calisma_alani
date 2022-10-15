@@ -1,11 +1,11 @@
-import React from "react";
 import Taskitem from "./Taskitem";
+import { data } from "../../helper/data";
 
-function Task({ tasks }) {
+function Task({ setTasks, tasks }) {
   return (
     <div>
-      {tasks.map((taskItem) => (
-        <Taskitem key={taskItem.id} taskItem={taskItem} />
+      {data.map((taskItem) => (
+        <Taskitem key={taskItem.id} taskItem={taskItem} setTasks={setTasks} />
       ))}
     </div>
   );

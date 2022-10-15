@@ -1,9 +1,10 @@
 import React, { useState } from "react";
+import { data } from "../../helper/data";
 
-const AddTask = ({ toggleShow} ) => {
+const AddTask = ({ toggleShow,setTasks}) => {
   const [day, setDay] = useState("");
   const [text, setText] = useState("");
-
+  
   const handelTextChange = (e) => {
     setText(e.target.value);
   };
@@ -12,7 +13,12 @@ const AddTask = ({ toggleShow} ) => {
   };
   const onSubmit = (e) => {
     e.preventDefault();
-    console.log(day, text);
+    setTasks(data.push({
+      day: day,
+      text: text,
+      id: Date.now(),
+    }))
+    
   };
 
   return (
