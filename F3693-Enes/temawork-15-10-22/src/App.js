@@ -12,7 +12,7 @@ function App() {
       <Header toggleShow={toggleShow} setToggleShow={setToggleShow} />
       <Button toggleShow={toggleShow} setToggleShow={setToggleShow} />
       <AddTask toggleShow={toggleShow} setTasks={setTasks} />
-      <Task setTasks={setTasks} />
+      <Task setTasks={setTasks} tasks={tasks} />
     </div>
   );
 }
