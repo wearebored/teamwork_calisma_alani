@@ -24,7 +24,7 @@ const AddTask = ({ toggleShow, setTasks }) => {
 
   return (
     <>
-      {toggleShow ? (
+      {toggleShow && (
         <form onSubmit={onSubmit} action="">
           <div>
             <label htmlFor="task">Task</label>
@@ -48,8 +48,6 @@ const AddTask = ({ toggleShow, setTasks }) => {
           </div>
           <button type="submit">Save Task</button>
         </form>
-      ) : (
-        <p>No Tasks to Show</p>
       )}
     </>
   );

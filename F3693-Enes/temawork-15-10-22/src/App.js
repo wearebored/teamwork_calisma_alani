@@ -5,7 +5,7 @@ import Button from "./components/Header/Button";
 import Task from "./components/Tasks/Task";
 import { data } from "./helper/data";
 function App() {
-  const [toggleShow, setToggleShow] = useState(true);
+  const [toggleShow, setToggleShow] = useState(false);
   const [tasks, setTasks] = useState(data);
   return (
     <div className="App">
