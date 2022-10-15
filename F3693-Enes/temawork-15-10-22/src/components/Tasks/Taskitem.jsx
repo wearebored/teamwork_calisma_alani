@@ -5,7 +5,7 @@ function Taskitem({ taskItem, setTasks }) {
   function onClickdelet(e) {
     let count = 0;
     for (let i of e.nativeEvent.path[3].childNodes) {
-      if (i.id == e.nativeEvent.path[2].id) {
+      if (i.id === e.nativeEvent.path[2].id) {
         setTasks(data.splice(count, 1));
       } else {
         count++;

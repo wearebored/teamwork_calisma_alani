@@ -6,7 +6,7 @@ const Button = ({ toggleShow, setToggleShow }) => {
   const [ab, setAb] = useState(a);
   function abs() {
     setToggleShow(!toggleShow);
-    if (ab == a) {
+    if (ab === a) {
       setAb(b);
     } else {
       setAb(a);
