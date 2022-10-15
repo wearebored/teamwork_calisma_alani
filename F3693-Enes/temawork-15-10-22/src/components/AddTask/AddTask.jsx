@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { data } from "../../helper/data";
 
-const AddTask = ({ toggleShow,setTasks}) => {
+const AddTask = ({ toggleShow, setTasks }) => {
   const [day, setDay] = useState("");
   const [text, setText] = useState("");
-  
+
   const handelTextChange = (e) => {
     setText(e.target.value);
   };
@@ -13,12 +13,13 @@ const AddTask = ({ toggleShow,setTasks}) => {
   };
   const onSubmit = (e) => {
     e.preventDefault();
-    setTasks(data.push({
-      day: day,
-      text: text,
-      id: Date.now(),
-    }))
-    
+    setTasks(
+      data.push({
+        day: day,
+        text: text,
+        id: Date.now(),
+      })
+    );
   };
 
   return (

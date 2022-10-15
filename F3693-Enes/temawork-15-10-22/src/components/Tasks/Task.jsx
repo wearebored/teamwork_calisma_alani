@@ -1,7 +1,7 @@
 import Taskitem from "./Taskitem";
 import { data } from "../../helper/data";
 
-function Task({ setTasks, tasks }) {
+function Task({ setTasks }) {
   return (
     <div>
       {data.map((taskItem) => (

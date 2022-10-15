@@ -6,13 +6,13 @@ import Task from "./components/Tasks/Task";
 import { data } from "./helper/data";
 function App() {
   const [toggleShow, setToggleShow] = useState(true);
-  const [tasks, setTasks] = useState([])
+  const [tasks, setTasks] = useState(data);
   return (
     <div className="App">
       <Header toggleShow={toggleShow} setToggleShow={setToggleShow} />
       <Button toggleShow={toggleShow} setToggleShow={setToggleShow} />
       <AddTask toggleShow={toggleShow} setTasks={setTasks} />
-      <Task tasks={tasks} setTasks={setTasks} />
+      <Task setTasks={setTasks} />
     </div>
   );
 }
