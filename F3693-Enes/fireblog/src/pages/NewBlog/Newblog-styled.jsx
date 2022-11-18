@@ -24,9 +24,5 @@ export const Cards = styled.div`
   justify-content: center;
   gap: 1rem;
 
-  div {
-    background-color: red;
-    width: 20rem;
-    height: 20rem;
-  }
+  
 `;
