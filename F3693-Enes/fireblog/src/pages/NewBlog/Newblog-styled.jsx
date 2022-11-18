@@ -16,13 +16,13 @@ export const HomeCon = styled.div`
   }
 `;
 export const Cards = styled.div`
-  background-color: aqua;
+  /* background-color: aqua; */
   min-height: 40vh;
   width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 1rem;
+  gap: 2rem;
 
   
 `;

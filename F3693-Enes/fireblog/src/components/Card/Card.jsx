@@ -1,5 +1,14 @@
-import { CardCon, CardData, CardImage, CardLike } from "./Card-styled"
-
+import {
+  CardCon,
+  CardData,
+  CardImage,
+  CardLike,
+  EmailDiv,
+  LikeIcon,
+  Messagdiv,
+  MessageIcon,
+  UserIcon,
+} from "./Card-styled";
 
 function Card() {
   return (
@@ -11,13 +20,32 @@ function Card() {
         />
       </CardImage>
       <CardData>
-        <h3>PostgreSQL</h3>
+        <h4>PostgreSQL</h4>
         <span>13.23.2022</span>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis maiores aliquam ipsam molestias minima suscipit!</p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis maiores
+          aliquam ipsam molestias minima suscipifeeeeeeeeeefesfsf
+        </p>
       </CardData>
-      <CardLike></CardLike>
+      <CardLike>
+        <EmailDiv>
+          <UserIcon />
+          <p>enes@gmail.com</p>
+        </EmailDiv>
+        <Messagdiv>
+          <LikeIcon />
+          <p>
+            {" "}
+            <sup>5</sup>{" "}
+          </p>
+          <MessageIcon />
+          <p>
+            <sup>6</sup>
+          </p>
+        </Messagdiv>
+      </CardLike>
     </CardCon>
   );
 }
 
-export default Card
+export default Card;
