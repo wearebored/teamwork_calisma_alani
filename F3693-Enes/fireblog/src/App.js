@@ -1,6 +1,5 @@
-import logo from "./logo.svg";
-import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Navbar from "./components/Navbar/Navbar";
 import About from "./pages/About/About";
 import Dashboard from "./pages/Dashboard/Dashboard";
 import Details from "./pages/Details/Details";
@@ -14,6 +13,7 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
+      <Navbar/>
         <Routes>
           <Route path="/about" element={<About/>} />
           <Route path="/dashboard" element={<Dashboard/>} />
