@@ -1,8 +1,14 @@
+import { Cards, HomeCon } from "./Newblog-styled"
 
 
 function NewBlog() {
   return (
-    <div>NewBlog</div>
+    <HomeCon>
+      <h3>Dashboard</h3>
+      <Cards>
+        <div></div>
+      </Cards>
+    </HomeCon>
   )
 }
 

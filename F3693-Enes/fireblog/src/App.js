@@ -13,16 +13,16 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-      <Navbar/>
+        <Navbar />
         <Routes>
-          <Route path="/about" element={<About/>} />
-          <Route path="/dashboard" element={<Dashboard/>} />
-          <Route path="/details" element={<Details/>} />
-          <Route path="/login" element={<Login/>} />
-          <Route path="/newblog" element={<NewBlog/>} />
-          <Route path="/profile" element={<Profile/>} />
-          <Route path="/register" element={<Register/>} />
-          <Route path="/updateblog" element={<UpdateBlog/>} />
+          <Route path="/about" element={<About />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/details" element={<Details />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/" element={<NewBlog />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/updateblog" element={<UpdateBlog />} />
         </Routes>
       </BrowserRouter>
     </div>
