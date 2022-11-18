@@ -12,12 +12,18 @@ export const HomeCon = styled.div`
 
   h3 {
     font-size: 2.5rem;
+    margin-bottom: 1rem;
   }
 `;
 export const Cards = styled.div`
   background-color: aqua;
   min-height: 40vh;
   width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+
   div {
     background-color: red;
     width: 20rem;

@@ -7,6 +7,10 @@ function NewBlog() {
       <h3>Dashboard</h3>
       <Cards>
         <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
       </Cards>
     </HomeCon>
   )
