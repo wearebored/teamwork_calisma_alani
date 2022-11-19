@@ -13,11 +13,12 @@ function Login() {
           <input placeholder="Email" id="email" type="text" />
           <label htmlFor="password">Password</label>
           <input placeholder="Password" id="password" type="text" />
-          <button id="google" >LOGIN</button>
-          <button  >
+          <button id="google">LOGIN</button>
+          <button>
             {"WITH"}
             <img src="images/google.png" alt="" />{" "}
           </button>
+          <button >REGISTER</button>
         </LoginInput>
       </LoginBloc>
     </LoginCon>

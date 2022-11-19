@@ -10,7 +10,7 @@ export const NavbarCon = styled.div`
 
   img {
     height: 3rem;
-    margin-left: 1rem;
+    margin-left: 3rem;
   }
   h1 {
     color: white;
@@ -18,6 +18,37 @@ export const NavbarCon = styled.div`
 `;
 export const IconDiv = styled(FaUserCircle)`
   font-size: 1.8rem;
-  margin-right: 1rem;
+  margin: 1rem;
   color: white;
+`;
+export const IconList = styled.div`
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 2rem;
+
+  ul {
+    transform: translateY(3rem);
+    position: absolute;
+    visibility: hidden;
+    background-color: #ffe590;
+    list-style-type: none;
+    padding: 0.5rem;
+    display: flex;
+    border-radius: 5px;
+    flex-direction: column;
+    gap: 10px;
+    li {
+      width: 4.2rem;
+      &:hover {
+        color: red;
+      }
+    }
+  }
+  &:hover {
+    ul {
+      visibility: visible;
+    }
+  }
 `;

@@ -9,11 +9,14 @@ export const LoginCon = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  h3 {
+    font-size: 2rem;
+  }
 `;
 export const LoginBloc = styled.div`
   background-color: #ececec;
   width: 27rem;
-  height: 33rem;
+  min-height: 33rem;
   border-radius: 10px;
   display: flex;
   justify-content: center;
@@ -53,6 +56,12 @@ export const LoginInput = styled.div`
       transform: translateY(4px);
       margin-left: 5px;
     }
+  }
+  select {
+    font-size: 1rem;
+    height: 2rem;
+    width: 20rem;
+    padding-left: 0.5rem;
   }
   #google {
     background-color: aqua;
