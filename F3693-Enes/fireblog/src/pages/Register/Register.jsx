@@ -1,3 +1,4 @@
+import { useState } from "react";
 import {
   ImgDiv,
   LoginBloc,
@@ -7,6 +8,13 @@ import {
 
 
 function Register() {
+  const [fullname,setFullname]=useState("")
+  const [gender, setGender] = useState("")
+  const [age,setAge]= useState("")
+  const [email,setEmail]=useState("")
+  const [password,setPassword]=useState("")
+  const data = [fullname,gender,age,email,password]
+  console.log(data);
   return (
     <LoginCon>
       <LoginBloc>
@@ -17,19 +25,57 @@ function Register() {
 
         <LoginInput>
           <label htmlFor="fullname">Fullname</label>
-          <input placeholder="Fullname" id="fullname" type="text" />
+          <input
+            onChange={(e) => {
+              setFullname(e.target.value);
+            }}
+            value={fullname}
+            placeholder="Fullname"
+            id="fullname"
+            type="text"
+          />
           <label htmlFor="gender">Gender</label>
-          <select name="gender" id="gender">
+          <select
+            onChange={(e) => {
+              setGender(e.target.value);
+            }}
+            name="gender"
+            id="gender"
+          >
             <option value="gender">Gender</option>
             <option value="male">Male</option>
             <option value="famale">Famale</option>
           </select>
           <label htmlFor="age">Age</label>
-          <input placeholder="Age" id="age" type="number" />
+          <input
+            onChange={(e) => {
+              setAge(e.target.value);
+            }}
+            value={age}
+            placeholder="Age"
+            id="age"
+            type="number"
+          />
           <label htmlFor="email">Email</label>
-          <input placeholder="Email" id="email" type="text" />
+          <input
+            value={email}
+            onChange={(e) => {
+              setEmail(e.target.value);
+            }}
+            placeholder="Email"
+            id="email"
+            type="text"
+          />
           <label htmlFor="password">Password</label>
-          <input placeholder="Password" id="password" type="text" />
+          <input
+            value={password}
+            onChange={(e) => {
+              setPassword(e.target.value);
+            }}
+            placeholder="Password"
+            id="password"
+            type="text"
+          />
 
           <button id="google">REGISTER</button>
           <button>
