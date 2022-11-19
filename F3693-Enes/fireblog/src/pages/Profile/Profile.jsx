@@ -8,7 +8,7 @@ function Profile() {
   const { login } = useSelector((s) => s.login);
   useEffect(() => {
     VeriOkuma("kullanici", login, setUserdata);
-  }, []);
+  }, [login]);
   console.log(userdata);
   return (
     <div>
