@@ -8,6 +8,7 @@ import NewBlog from "./pages/NewBlog/NewBlog";
 import Profile from "./pages/Profile/Profile";
 import Register from "./pages/Register/Register";
 import UpdateBlog from "./pages/UpdateBlog/UpdateBlog";
+import RoutePrivate from "./private/RoutePrivate";
 
 function App() {
   return (
@@ -15,15 +16,16 @@ function App() {
       <BrowserRouter>
         <Navbar />
         <Routes>
+          <Route element={<RoutePrivate />}>
+            <Route path="/newblog" element={<NewBlog />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/updateblog" element={<UpdateBlog />} />
+            <Route path="/details" element={<Details />} />
+          </Route>
           <Route path="/about" element={<About />} />
-          <Route path="/newblog" element={<NewBlog/>} />
-          <Route path="/details" element={<Details />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/" element={<Dashboard/>} />
-          <Route path="/profile" element={<Profile />} />
+          <Route path="/" element={<Dashboard />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/updateblog" element={<UpdateBlog />} />
-
         </Routes>
       </BrowserRouter>
     </div>
