@@ -17,7 +17,7 @@ function Register() {
   const [password,setPassword]=useState("")
   const [error,setError]=useState("")
   const navigate=useNavigate()
-  const data = [fullname,gender,age]
+  const data = {fullname,gender,age,email,password}
   console.log(data);
   return (
     <LoginCon>
