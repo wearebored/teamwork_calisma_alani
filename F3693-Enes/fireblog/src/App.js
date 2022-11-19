@@ -1,4 +1,6 @@
+import { Provider } from "react-redux";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { store } from "./app/store";
 import Navbar from "./components/Navbar/Navbar";
 import About from "./pages/About/About";
 import Dashboard from "./pages/Dashboard/Dashboard";
@@ -11,8 +13,10 @@ import UpdateBlog from "./pages/UpdateBlog/UpdateBlog";
 import RoutePrivate from "./private/RoutePrivate";
 
 function App() {
+  
   return (
     <div className="App">
+      <Provider store={store} >
       <BrowserRouter>
         <Navbar />
         <Routes>
@@ -28,6 +32,7 @@ function App() {
           <Route path="/register" element={<Register />} />
         </Routes>
       </BrowserRouter>
+      </Provider>
     </div>
   );
 }
