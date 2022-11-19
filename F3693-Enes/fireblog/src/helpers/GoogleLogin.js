@@ -1,4 +1,7 @@
 import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import { app } from "./firebase";
+import { writeUserData } from "./LiveData";
+
 function GoogleLogin(dispatch, navigate, setLogin) {
   const provider = new GoogleAuthProvider();
   const auth = getAuth();
@@ -9,7 +12,10 @@ function GoogleLogin(dispatch, navigate, setLogin) {
       const token = credential.accessToken;
       // The signed-in user info.
       const user = result.user;
+      const data = { email: user.email, fullname: user.displayName };
       dispatch(setLogin(user.uid));
+
+      writeUserData(data, user.uid, "kullanici");
       console.log(user);
       navigate(-2);
       // ...

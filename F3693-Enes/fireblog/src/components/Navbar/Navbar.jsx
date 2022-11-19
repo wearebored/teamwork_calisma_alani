@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { setLogout } from "../../app/features/LoginSlice";
-import { IconDiv, IconList, NavbarCon } from "./navbar-styled";
+import { IconDiv, IconList, NavbarCon, Weare } from "./navbar-styled";
 
 function Navbar() {
   const navigate = useNavigate;
@@ -11,19 +11,24 @@ function Navbar() {
   return (
     <NavbarCon>
       <img src="images/cw.jpeg" alt="" />
-      <h1>{"<WeAreBored/> Blog"}</h1>
+      <Weare to="/">
+        <h1>{"<WeAreBored/> Blog"}</h1>
+      </Weare>
 
       <IconList>
         <IconDiv />
         <ul>
           <li>
-            <Link to="/newblog"> New Blog</Link>
+            <Weare to="/newblog">
+              {" "}
+              New Blog
+            </Weare>
           </li>
           <li>
-            <Link to="/about"> About</Link>
+            <Weare to="/about"> About</Weare>
           </li>
           <li>
-            <Link to="/profile"> Profile</Link>
+            <Weare to="/profile"> Profile</Weare>
           </li>
           {login ? (
             <li
@@ -35,7 +40,7 @@ function Navbar() {
             </li>
           ) : (
             <li>
-              <Link to="/profile"> Login</Link>
+              <Weare to="/profile"> Login</Weare>
             </li>
           )}
         </ul>

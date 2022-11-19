@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { FaUserCircle } from "react-icons/fa";
+import { Link } from "react-router-dom";
 export const NavbarCon = styled.div`
   background-color: #017a8f;
   height: 10vh;
@@ -51,5 +52,12 @@ export const IconList = styled.div`
     ul {
       visibility: visible;
     }
+  }
+`;
+export const Weare = styled(Link)`
+  text-decoration: none;
+  color: black;
+  &:hover {
+    color: red;
   }
 `;
