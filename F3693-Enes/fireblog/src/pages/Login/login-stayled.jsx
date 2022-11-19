@@ -67,5 +67,9 @@ export const LoginInput = styled.div`
     background-color: aqua;
     border: solid 0px;
     border-radius: 5px;
+    color: white;
+    &:disabled {
+      opacity: 0.5;
+    }
   }
 `;

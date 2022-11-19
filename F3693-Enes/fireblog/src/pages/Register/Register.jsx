@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import RegisterFireBase from "../../helpers/RegisterFireBase";
 import {
   ImgDiv,
   LoginBloc,
@@ -9,11 +11,13 @@ import {
 
 function Register() {
   const [fullname,setFullname]=useState("")
-  const [gender, setGender] = useState("")
+  const [gender, setGender] = useState("gender")
   const [age,setAge]= useState("")
   const [email,setEmail]=useState("")
   const [password,setPassword]=useState("")
-  const data = [fullname,gender,age,email,password]
+  const [error,setError]=useState("")
+  const navigate=useNavigate()
+  const data = [fullname,gender,age]
   console.log(data);
   return (
     <LoginCon>
@@ -22,7 +26,7 @@ function Register() {
           <img src="images/blok.png" alt="" />
         </ImgDiv>
         <h3>Register</h3>
-
+        {error && <p style={{ color: "red" }}>{error}</p>}
         <LoginInput>
           <label htmlFor="fullname">Fullname</label>
           <input
@@ -77,7 +81,15 @@ function Register() {
             type="text"
           />
 
-          <button id="google">REGISTER</button>
+          <button
+            disabled={!fullname ? true : gender === "gender"?true:!age?true:!email?true:password.length>=6?false:true}
+            onClick={() => {
+              RegisterFireBase(email, password, data, setError, navigate);
+            }}
+            id="google"
+          >
+            REGISTER
+          </button>
           <button>
             {"WITH"}
             <img src="images/google.png" alt="" />{" "}

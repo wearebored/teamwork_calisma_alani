@@ -3,20 +3,20 @@ import {
   createUserWithEmailAndPassword,
   updateProfile,
 } from "firebase/auth";
+import { app } from "./firebase";
 
-function RegisterFireBase() {
-    const auth = getAuth(email,password);
-    createUserWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        // Signed in
-        const user = userCredential.user;
-        // ...
-      })
-      .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        // ..
-      });
+function RegisterFireBase(email, password, data, setError, navigate) {
+  const auth = getAuth();
+  createUserWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
+      // Signed in
+      const user = userCredential.user;
+      // ...
+    })
+    .catch((error) => {
+      setError(error.code)
+      // ..
+    });
 }
 
 export default RegisterFireBase;
