@@ -9,6 +9,8 @@ export const HomeCon = styled.div`
   flex-direction: column;
   align-items: center;
   padding: 1rem 7rem;
+  position: relative;
+  z-index: 1;
 
   h3 {
     font-size: 2.5rem;

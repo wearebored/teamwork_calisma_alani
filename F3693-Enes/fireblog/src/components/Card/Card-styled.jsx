@@ -3,7 +3,7 @@ import { FaUserCircle, FaHeart } from "react-icons/fa";
 import { FiMessageSquare } from "react-icons/fi";
 
 export const CardCon = styled.div`
-  /* background-color: red; */
+  background-color: #ffffff;
   width: 25rem;
   height: 25rem;
   display: flex;

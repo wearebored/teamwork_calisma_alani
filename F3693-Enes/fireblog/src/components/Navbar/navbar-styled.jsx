@@ -38,6 +38,7 @@ export const IconList = styled.div`
     display: flex;
     border-radius: 5px;
     flex-direction: column;
+    z-index: 2;
     gap: 10px;
     li {
       width: 4.2rem;
