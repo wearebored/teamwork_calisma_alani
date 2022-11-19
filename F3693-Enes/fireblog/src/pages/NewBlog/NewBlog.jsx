@@ -1,36 +1,19 @@
-import { useState } from "react";
-import Card from "../../components/Card/Card";
-import Modal from "../../components/Modal/Modal";
-import { Cards, HomeCon } from "./Newblog-styled";
+
+import { NewBlogCon } from "./Newblog-styled";
 
 function NewBlog() {
-  const [modal, setModal] = useState(false);
   return (
-    <HomeCon>
-      {modal && <Modal />}
-      <h3
-        onClick={(e) => {
-          setModal(true);
-        }}
-      >
-        Dashboard
-      </h3>
-      <Cards>
-        <Card></Card>
-        <Card></Card>
-        <Card></Card>
-        <Card></Card>
-        <Card></Card>
-        <Card></Card>
-        <Card></Card>
-        <Card></Card>
-        <Card></Card>
-        <Card></Card>
-        <Card></Card>
-        <Card></Card>
-        <Card></Card>
-      </Cards>
-    </HomeCon>
+    <NewBlogCon>
+      <img src="images/blok.png" alt="" />
+      <h2>New Blog</h2>
+      <label htmlFor="title">Title</label>
+      <input placeholder="Title" id="title" type="text" />
+      <label htmlFor="url">Image URL</label>
+      <input placeholder="Image URL" id="url" type="text" />
+      <label htmlFor="content">Content</label>
+      <textarea placeholder="Content" name="content" id="content"></textarea>
+      <button>SUBMIT</button>
+    </NewBlogCon>
   );
 }
 
