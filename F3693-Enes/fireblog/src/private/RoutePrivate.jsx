@@ -6,7 +6,7 @@ function RoutePrivate() {
   const {login}=useSelector((store)=>store.login)
   console.log(login);
   return (
-    login ? <Outlet/>:<Navigate to="/" />
+    login ? <Outlet/>:<Navigate to="/login" />
   )
 }
 

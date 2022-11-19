@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useSelector } from "react-redux";
 import Card from "../../components/Card/Card";
 import Modal from "../../components/Modal/Modal";
 import { Cards, HomeCon } from "./Dashboard-styled";
@@ -6,6 +7,8 @@ import { Cards, HomeCon } from "./Dashboard-styled";
 
 function Dashboard() {
   const [modal, setModal] = useState(false);
+  const {login}=useSelector((store)=>store.login)
+  console.log(login);
   return (
     
     <HomeCon>
