@@ -1,4 +1,8 @@
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import {
+  getAuth,
+  createUserWithEmailAndPassword,
+  updateProfile,
+} from "firebase/auth";
 
 function RegisterFireBase() {
     const auth = getAuth(email,password);
@@ -16,3 +20,19 @@ function RegisterFireBase() {
 }
 
 export default RegisterFireBase;
+
+const Update = ()=>{
+    const auth = getAuth();
+    updateProfile(auth.currentUser, {
+      displayName: "Jane Q. User",
+      photoURL: "https://example.com/jane-q-user/profile.jpg",
+    })
+      .then(() => {
+        // Profile updated!
+        // ...
+      })
+      .catch((error) => {
+        // An error occurred
+        // ...
+      });
+}
