@@ -10,21 +10,21 @@ import {
   UserIcon,
 } from "./Card-styled";
 
-function Card() {
+function Card({e}) {
+  console.log(e);
   return (
     <CardCon>
       <CardImage>
         <img
-          src="https://lh3.googleusercontent.com/-v5LSZJbYI7E/YFdIchHdrnI/AAAAAAAAml0/hAwPRbMOpmEtd-0VA27zB4GS9O0a2kUzQCLcBGAsYHQ/image.png"
-          alt=""
+          src={e.url}
+          alt={e.title}
         />
       </CardImage>
       <CardData>
-        <h4>PostgreSQL</h4>
+        <h4>{e.title}</h4>
         <span>13.23.2022</span>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis maiores
-          aliquam ipsam molestias minima suscipifeeeeeeeeeefesfsf
+         {e.content}
         </p>
       </CardData>
       <CardLike>

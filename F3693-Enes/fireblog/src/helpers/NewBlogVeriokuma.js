@@ -3,7 +3,7 @@ import { getDatabase, ref, child, get } from "firebase/database";
  
  function NewBlogVeriokuma(container, userId, setCounter) {
    const dbRef = ref(getDatabase());
-   get(child(dbRef, `${container}/${userId}`))
+   get(child(dbRef, `${container}/data`))
      .then((snapshot) => {
        if (snapshot.exists()) {
          setCounter(snapshot.val().length-1);
