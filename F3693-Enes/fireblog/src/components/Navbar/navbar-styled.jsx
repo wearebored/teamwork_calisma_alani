@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import { FaUserCircle } from "react-icons/fa";
 import { Link } from "react-router-dom";
+
+
 export const NavbarCon = styled.div`
   background-color: #017a8f;
   height: 10vh;

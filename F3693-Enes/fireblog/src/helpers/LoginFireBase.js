@@ -11,8 +11,12 @@ function LoginFireBase(
   signInWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
       // Signed in
+      
       const user = userCredential.user;
+  
       dispatch(setLogin(user.uid));
+      
+  
       navigate(-2);
 
       // ...

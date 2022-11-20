@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Navigate, useNavigate } from "react-router-dom";
-import { setLogin } from "../../app/features/LoginSlice";
+import { setLogin} from "../../app/features/LoginSlice";
 import GoogleLogin from "../../helpers/GoogleLogin";
 import RegisterFireBase from "../../helpers/RegisterFireBase";
 import {
@@ -103,7 +103,14 @@ function Register() {
                   : true
               }
               onClick={() => {
-                RegisterFireBase(email, password, data, setError, navigate,dispatch);
+                RegisterFireBase(
+                  email,
+                  password,
+                  data,
+                  setError,
+                  navigate,
+                  dispatch
+                );
               }}
               id="google"
             >

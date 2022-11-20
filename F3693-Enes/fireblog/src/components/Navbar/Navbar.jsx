@@ -4,7 +4,7 @@ import { setLogout } from "../../app/features/LoginSlice";
 import { IconDiv, IconList, NavbarCon, Weare } from "./navbar-styled";
 
 function Navbar() {
-  const navigate = useNavigate;
+ 
   const dispatch = useDispatch();
   const { login } = useSelector((s) => s.login);
 

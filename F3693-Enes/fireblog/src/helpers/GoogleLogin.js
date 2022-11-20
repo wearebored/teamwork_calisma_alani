@@ -14,6 +14,7 @@ function GoogleLogin(dispatch, navigate, setLogin) {
       const user = result.user;
       const data = { email: user.email, fullname: user.displayName };
       dispatch(setLogin(user.uid));
+  
 
       writeUserData(data, user.uid, "kullanici");
       console.log(user);
