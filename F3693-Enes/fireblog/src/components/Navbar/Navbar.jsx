@@ -1,5 +1,4 @@
 import { useDispatch, useSelector } from "react-redux";
-import { Link, useNavigate } from "react-router-dom";
 import { setLogout } from "../../app/features/LoginSlice";
 import { IconDiv, IconList, NavbarCon, Weare } from "./navbar-styled";
 

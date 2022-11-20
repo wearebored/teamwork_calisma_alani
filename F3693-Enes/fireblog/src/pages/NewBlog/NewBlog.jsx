@@ -1,6 +1,9 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import { writeUserData } from "../../helpers/LiveData";
+import { useNavigate } from "react-router-dom";
+import NewBlogVeriokuma from "../../helpers/NewBlogVeriokuma";
+import { VeriEkleme } from "../../helpers/VeriEkleme";
+
 import { NewBlogCon } from "./Newblog-styled";
 
 function NewBlog() {
@@ -9,6 +12,14 @@ function NewBlog() {
   const [content, setContent] = useState("");
   const data={title,url,content}
   const {login}=useSelector((s)=>s.login)
+  const navigate=useNavigate()
+  const [counter, setCounter] = useState("");
+  useEffect(() => {
+    
+    NewBlogVeriokuma("veriler", login, setCounter);
+  }, [login])
+ 
+  console.log(counter)
   return (
     <NewBlogCon>
       <img src="images/blok.png" alt="" />
@@ -43,7 +54,7 @@ function NewBlog() {
         name="content"
         id="content"
       ></textarea>
-      <button onClick={()=>{writeUserData(data,login,"veriler")
+      <button onClick={()=>{VeriEkleme(data, login, "veriler", navigate, counter);
     }} >SUBMIT</button>
     </NewBlogCon>
   );
