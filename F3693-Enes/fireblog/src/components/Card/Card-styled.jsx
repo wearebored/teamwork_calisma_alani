@@ -13,7 +13,7 @@ export const CardCon = styled.div`
  
 `;
 export const CardImage = styled.div`
-  background-color: green;
+  /* background-color: green; */
   overflow: hidden;
   height: 50%;
 

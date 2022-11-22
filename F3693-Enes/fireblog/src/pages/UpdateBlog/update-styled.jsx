@@ -6,9 +6,12 @@ export const UpdateCon = styled.div`
   align-items: center;
   gap: 1rem;
   img {
-    border: solid 2px red;
+    /* border: solid 2px red; */
+    margin-top: 2rem;
     height: 15rem;
     width: 30rem;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px;
   }
   input {
     font-size: 1.2rem;

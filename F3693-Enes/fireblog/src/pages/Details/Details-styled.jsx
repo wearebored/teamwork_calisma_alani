@@ -8,19 +8,18 @@ export const DetailsCom = styled.div`
   display: flex;
   flex-direction: column;
   /* align-items: center; */
-  
+  margin-bottom: 2rem;
 
   h2 {
     font-size: 3rem;
     text-align: center;
   }
   img {
-    background-color: red;
+    /* background-color: red; */
     width: 100%;
     /* height: 30rem; */
   }
   .buttoncon {
-    
     display: flex;
     align-items: center;
     justify-content: space-evenly;

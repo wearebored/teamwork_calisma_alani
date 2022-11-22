@@ -14,7 +14,7 @@ function UpdateBlog() {
   const data = { title, image, content, state: state.ene };
   return (
     <UpdateCon>
-      <img src="" alt="" />
+      <img src={state.ene.url} alt="" />
       <h2>Update Blog</h2>
       <label htmlFor="title">Title</label>
       <input

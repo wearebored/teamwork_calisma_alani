@@ -24,13 +24,16 @@ function Card({ e, en }) {
   const [likeler, setLikeler] = useState(false);
   const [data, setData] = useState("");
   const navigate = useNavigate();
-// console.log(e);
+  // console.log(e);
   useEffect(() => {
     CardsVeri(e, setData);
     if (en.like.likes?.indexOf(login.email) > "-1") {
       setLikeler(true);
     }
   }, [e, en.like.likes, login.email]);
+  useEffect(() => {
+    login.login || setLikeler(false);
+  }, [login.login]);
 
   // -----------like silme--------
   const silme = () => {
@@ -103,7 +106,7 @@ function Card({ e, en }) {
           </p>
           <MessageIcon
             onClick={() => {
-              login.login && dispatch(setModal(e));
+              dispatch(setModal(e));
             }}
           />
           <p>

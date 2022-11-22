@@ -85,7 +85,7 @@ function Register() {
               }}
               placeholder="Password"
               id="password"
-              type="text"
+              type="password"
             />
 
             <button

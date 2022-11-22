@@ -11,6 +11,17 @@ function Dashboard() {
   const { modal } = useSelector((s) => s.modal);
 
   const [data, setData] = useState("");
+  const [sayac, setSayac] = useState(false);
+  setTimeout(() => {
+    setSayac(true);
+  }, 1000);
+  const bekle = () => {
+    if (sayac) {
+      return <img src="images/no-data.png" alt="" />;
+    } else {
+      return <img src="images/spinner.gif" alt="" />;
+    }
+  };
 
   useEffect(() => {
     DashboardVeri(setData);
@@ -21,12 +32,12 @@ function Dashboard() {
     <HomeCon>
       {modal && <Modal en={data} />}
       <h3>Dashboard</h3>
-      
+
       <Cards>
         {data?.data ? (
           data?.data?.map((e, index) => <Card key={index} e={index} en={e} />)
         ) : (
-          <div>veri yok</div>
+          <div className="time">{bekle()}</div>
         )}
       </Cards>
     </HomeCon>

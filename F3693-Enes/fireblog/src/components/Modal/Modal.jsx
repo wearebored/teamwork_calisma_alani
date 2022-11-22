@@ -65,26 +65,28 @@ function Modal({ en }) {
             </EmailDiv>
           </CardLike>
         </CardCon>
-        <YorumYaz>
-          <textarea
-            onChange={(e) => {
-              setComment(e.target.value);
-            }}
-            value={comment}
-            name="yorum"
-            id="yorum"
-            placeholder="Comment..."
-          ></textarea>
-          <button
-            disabled={comment ? false : true}
-            onClick={() => {
-              CommentVeri(comment, modalid, email);
-              setComment("");
-            }}
-          >
-            SEND
-          </button>
-        </YorumYaz>
+        {email && (
+          <YorumYaz>
+            <textarea
+              onChange={(e) => {
+                setComment(e.target.value);
+              }}
+              value={comment}
+              name="yorum"
+              id="yorum"
+              placeholder="Comment..."
+            ></textarea>
+            <button
+              disabled={comment ? false : true}
+              onClick={() => {
+                CommentVeri(comment, modalid, email);
+                setComment("");
+              }}
+            >
+              SEND
+            </button>
+          </YorumYaz>
+        )}
         <Yorumlar>
           {data.yorum?.yorumsayac > 0 &&
             data.yorum.yorums?.map((e, i) => <Comment key={i} data={e} />)}
