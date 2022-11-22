@@ -15,7 +15,7 @@ export async function VeriEkleme(
     .then((snapshot) => {
       if (snapshot.exists()) {
         const veri = snapshot.val();
-        console.log(snapshot.val());
+        // console.log(snapshot.val());
 
         // if (veri.anlikblog.sayac > 1) {
         //   veri.anlikblog.sayac++;

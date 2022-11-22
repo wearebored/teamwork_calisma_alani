@@ -43,7 +43,10 @@ function Modal({ en }) {
         <ModalClose onClick={() => dispatch(setModal())}>X</ModalClose>
         <CardCon
           onClick={() => {
-            navigate(`/details/${modalid}`, { state: { modalid, en } });
+            // console.log({ en, modalid });
+            navigate(`/details/${modalid}`, {
+              state: { e: modalid, en: en.data[modalid] },
+            });
             dispatch(setModal());
           }}
         >

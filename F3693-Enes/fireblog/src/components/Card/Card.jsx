@@ -60,6 +60,7 @@ function Card({ e, en }) {
     <CardCon>
       <CardImage
         onClick={() => {
+          // console.log({e,en});
           login.login
             ? navigate(`/details/${e}`, { state: { e, en } })
             : navigate("/login");

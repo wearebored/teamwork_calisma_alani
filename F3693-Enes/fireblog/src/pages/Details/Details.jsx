@@ -36,11 +36,12 @@ function Details() {
 
   // ----------------------
   useEffect(() => {
+    
     DashboardVeri(setData);
-    if (en.like?.likes?.indexOf(email) > "-1") {
+    if (en.like.likes.indexOf(email) > "-1") {
       setLikeler(true);
     }
-  }, [email, en.like?.likes]);
+  }, [email, en]);
   // -----------like silme--------
   const silme = () => {
     const veri = { ...ene.like };
