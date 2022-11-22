@@ -12,14 +12,15 @@ function NewBlog() {
   const [content, setContent] = useState("");
   const data={title,url,content}
   const {login}=useSelector((s)=>s.login)
+  const {email}=useSelector((s)=>s.login)
   const navigate=useNavigate()
   const [counter, setCounter] = useState("");
   useEffect(() => {
     
     NewBlogVeriokuma("veriler", login, setCounter);
   }, [login])
- 
-  console.log(counter)
+
+  
   return (
     <NewBlogCon>
       <img src="images/blok.png" alt="" />
@@ -54,10 +55,11 @@ function NewBlog() {
         name="content"
         id="content"
       ></textarea>
-      <button onClick={()=>{VeriEkleme(data, login, "veriler", navigate, counter);
+      <button disabled={!title?true:!url?true:!content?true:false} onClick={()=>{VeriEkleme(data, login, "veriler", navigate, counter,email);
     }} >SUBMIT</button>
     </NewBlogCon>
   );
+  
 }
 
 export default NewBlog;

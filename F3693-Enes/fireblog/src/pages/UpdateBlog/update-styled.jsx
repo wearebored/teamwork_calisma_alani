@@ -27,5 +27,15 @@ export const UpdateCon = styled.div`
     border: solid 0;
     border-radius: 5px;
     color: white;
+    &:disabled {
+      background-color: gray;
+      opacity: 0.5;
+      &:hover {
+        background-color: gray;
+      }
+    }
+    &:hover {
+      background-color: #ff2d2d;
+    }
   }
 `;

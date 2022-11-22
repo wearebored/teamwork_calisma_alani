@@ -1,10 +1,11 @@
 import { getDatabase, ref, child, get } from "firebase/database";
-async function VeriOkuma(container, userId, setUserdata) {
+
+async function CardsVeri(id, setData) {
   const dbRef = ref(getDatabase());
-  await get(child(dbRef, `${container}/${userId}`))
+ await get(child(dbRef, `veriler/data/${id}`))
     .then((snapshot) => {
       if (snapshot.exists()) {
-        setUserdata(snapshot.val());
+        setData(snapshot.val());
         // console.log(snapshot.val());
       } else {
         console.log("No data available");
@@ -15,4 +16,4 @@ async function VeriOkuma(container, userId, setUserdata) {
     });
 }
 
-export default VeriOkuma;
+export default CardsVeri;
