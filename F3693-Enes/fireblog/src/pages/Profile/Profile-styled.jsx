@@ -10,7 +10,7 @@ export const ProfileCon = styled.div`
   border: solid 2px black;
 `;
 export const PhotoDiv = styled.div`
-  background-color: red;
+  background-color: #ffffff;
   width: 12rem;
   height: 12rem;
   margin: auto;
@@ -22,7 +22,7 @@ export const PhotoDiv = styled.div`
   background-size: cover;
   background-position: center;
 
-  background-image: url(${(s)=>s.store});
+  background-image: url(${(s) => s.store});
 `;
 export const ProfileInfo = styled.div`
   margin: auto;
@@ -44,7 +44,11 @@ export const InfoList = styled.ul`
     input {
       font-size: 1.3rem;
       padding-left: 5px;
-      
+    }
+    select {
+      font-size: 1.3rem;
+      padding-left: 5px;
+      width: 100%;
     }
   }
 `;
@@ -57,5 +61,21 @@ export const UpdataProf = styled.div`
     border: solid 1px;
     border-radius: 5px;
     margin: 2rem;
+    &:disabled {
+      background-color: gray;
+      color: white;
+    }
+  }
+`;
+export const ImageUrl = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+  input {
+    position: absolute;
+    font-size: 1.3rem;
+    transform: translateY(-4rem);
   }
 `;

@@ -2,12 +2,14 @@ import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import VeriOkuma from "../../helpers/VeriOkuma";
 import {
+  ImageUrl,
   InfoList,
   PhotoDiv,
   ProfileCon,
   ProfileInfo,
   UpdataProf,
 } from "./Profile-styled";
+import ProfileUpdate from "./ProfileUpdate/ProfileUpdate";
 
 function Profile() {
   const [userdata, setUserdata] = useState("");
@@ -18,14 +20,19 @@ function Profile() {
   const [email, setEmail] = useState("");
   const [age, setAge] = useState("");
   const [güncelleme, setGüncelleme] = useState(false);
-  const data = { name, gender, email, age };
-  console.log(userdata);
-  console.log(güncelleme);
+  const [imageUrl, setImageUrl] = useState("");
+  const [image, setImage] = useState("images/loading.gif");
+  const data = {
+    name,
+    gender,
+    email,
+    age,
+    login,
+    image: imageUrl ? imageUrl : image,
+  };
+
   // --------------------------------------------
-  const [image, setImage] = useState(
-    "https://media.sproutsocial.com/uploads/2022/06/profile-picture.jpeg"
-  );
-  const url = "https://picsum.photos/1600/900";
+  //  "https://media.sproutsocial.com/uploads/2022/06/profile-picture.jpeg";
   // ----------------------------------
   const güncelle = () => {
     userdata.fullname && setName(userdata?.fullname);
@@ -35,14 +42,26 @@ function Profile() {
   };
 
   useEffect(() => {
-    VeriOkuma("kullanici", login, setUserdata);
-  }, [login]);
+    VeriOkuma("kullanici", login, setUserdata, setImage);
+  }, [login, güncelleme, userdata.image]);
 
-  console.log(userdata);
   return (
     <div>
       <ProfileCon>
-        <PhotoDiv store={image ? image : url}></PhotoDiv>
+        <PhotoDiv store={image}></PhotoDiv>
+        <ImageUrl>
+          {update && (
+            <input
+              placeholder="Image Url"
+              onChange={(e) => {
+                setImageUrl(e.target.value);
+                setGüncelleme(true);
+              }}
+              value={imageUrl}
+              type="text"
+            />
+          )}
+        </ImageUrl>
         <ProfileInfo>
           <InfoList>
             <li>Name</li>
@@ -70,15 +89,17 @@ function Profile() {
             </li>
             <li>
               {update ? (
-                <input
+                <select
+                  value={gender}
                   onChange={(e) => {
                     setGender(e.target.value);
                     setGüncelleme(true);
                   }}
-                  value={gender}
-                  placeholder="update your information..."
-                  type="text"
-                />
+                >
+                  <option value="Gender">Gender</option>
+                  <option value="Male">Male</option>
+                  <option value="Famale">Famale</option>
+                </select>
               ) : userdata.gender ? (
                 userdata.gender
               ) : (
@@ -126,6 +147,7 @@ function Profile() {
             onClick={() => {
               setUpdate(!update);
               update || güncelle();
+              güncelleme && ProfileUpdate({ data });
               setGüncelleme(false);
             }}
           >
