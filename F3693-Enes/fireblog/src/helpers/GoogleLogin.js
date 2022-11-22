@@ -17,8 +17,8 @@ function GoogleLogin(dispatch, navigate, setLogin) {
   
 
       writeUserData(data, user.uid, "kullanici");
-      console.log(user);
-      navigate(-2);
+      // console.log(user);
+      navigate(-1);
       // ...
     })
     .catch((error) => {

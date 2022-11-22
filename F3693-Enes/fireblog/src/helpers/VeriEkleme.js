@@ -48,7 +48,7 @@ export async function VeriEkleme(
           set(ref(db, `${container}/data/${veri.anlikblog.sayac}`), {
             ...data,
             userId,
-            id: veri.anlikblog.sayac,
+            id: veri.totalblog.sayac,
             date: date.toISOString(),
             like: {
               likesayac: 0,

@@ -11,7 +11,7 @@ function Login() {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const { login } = useSelector((store) => store.login);
-  console.log(login);
+  // console.log(login);
   const navigate = useNavigate();
   const dispatch = useDispatch();
   if (login) {
