@@ -21,7 +21,6 @@ export const Modals = styled.div`
   align-items: center;
   /* gap: 1rem; */
   border-radius: 10px;
-  position: relative;
 `;
 export const Yorumlar = styled.div`
   width: 100%;
@@ -32,46 +31,4 @@ export const Yorumlar = styled.div`
   flex-direction: column;
 
   gap: 1rem;
-`;
-export const ModalClose = styled.button`
-  background-color: red;
-  width: 2rem;
-  height: 2rem;
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  border-radius: 5px;
-  font-size: 1.6rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: solid 1px gray;
-`;
-export const YorumYaz = styled.div`
-  background-color: #bbbbbbb0;
-  height: 10rem;
-  width: 80%;
-  margin-top: 1rem;
-  border-radius: 5px;
-  padding: 1rem;
-  text-align: center;
-  textarea {
-    height: 100%;
-    width: 100%;
-    font-size: 1.5rem;
-    padding: 1rem;
-    resize: none;
-  }
-  button {
-    text-align: center;
-    height: 2rem;
-    padding: 0 1rem;
-    background-color: #fd632b;
-    color: white;
-    border-radius: 5px;
-    border: solid 1px;
-    &:disabled{
-      background-color: #7c7c7c;
-    }
-  }
 `;
