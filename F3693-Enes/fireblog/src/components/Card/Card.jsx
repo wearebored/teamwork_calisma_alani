@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { setModal } from "../../app/features/ModalSlice";
 import Likeveri from "../../helpers/Cardveri/Likeveri";
 import {
   CardCon,
@@ -17,13 +18,14 @@ function Card({ id, veri }) {
   const { email } = useSelector((s) => s.login);
   const [like, setLike] = useState(false);
   const [keyler, setKeyler] = useState("");
+  const dispatch = useDispatch();
 
   const likegüncel = () => {
-    if (veri.like.likes) {
+    if (veri.like?.likes) {
       let sayac = 0;
-      Object.keys(veri.like.likes).map((e) => {
-        veri.like.likes[e].indexOf(email) > -1 && sayac++;
-        veri.like.likes[e].indexOf(email) > -1 && setKeyler(e);
+      Object.keys(veri.like?.likes).map((e) => {
+        veri.like?.likes[e].indexOf(email) > -1 && sayac++;
+        veri.like?.likes[e].indexOf(email) > -1 && setKeyler(e);
       });
       console.log(sayac);
       sayac > 0 ? setLike(true) : setLike(false);
@@ -46,7 +48,7 @@ function Card({ id, veri }) {
       </CardImage>
       <CardData>
         <h4>{veri.title}</h4>
-        <span>{veri.date.slice(0, 10)}</span>
+        <span>{veri.date?.slice(0, 10)}</span>
         <p>{veri.content}</p>
       </CardData>
       <CardLike>
@@ -58,16 +60,26 @@ function Card({ id, veri }) {
           <LikeIcon
             onClick={() => {
               setLike(!like);
-              Likeveri({ id, email, like, keyler,likesayac:veri.like.likesayac });
+              Likeveri({
+                id,
+                email,
+                like,
+                keyler,
+                likesayac: veri.like?.likesayac,
+              });
             }}
             state={like ? "#ff0000" : "#6e6e6e"}
           />
           <p>
-            <sup>{veri.like.likesayac}</sup>
+            <sup>{veri.like?.likesayac}</sup>
           </p>
-          <MessageIcon />
+          <MessageIcon
+            onClick={() => {
+              dispatch(setModal(id));
+            }}
+          />
           <p>
-            <sup>{veri.yorum.yorumsayac}</sup>
+            <sup>{veri.yorum?.yorumsayac}</sup>
           </p>
         </Messagdiv>
       </CardLike>

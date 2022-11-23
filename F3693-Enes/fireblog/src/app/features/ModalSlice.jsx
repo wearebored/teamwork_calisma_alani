@@ -2,6 +2,7 @@ import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
 modal:false,
+modaldata:"",
 }
 
 const ModalSlice = createSlice({
@@ -10,6 +11,7 @@ const ModalSlice = createSlice({
   reducers: {
     setModal:(s,a)=>{
         s.modal=!s.modal
+        s.modaldata=a.payload
     }
   }
 });
