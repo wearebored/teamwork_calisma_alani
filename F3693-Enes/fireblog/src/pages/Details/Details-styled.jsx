@@ -7,6 +7,7 @@ export const DetailsCom = styled.div`
   padding: 0 10rem;
   display: flex;
   flex-direction: column;
+  margin-bottom: 2rem;
 
   /* align-items: center; */
 

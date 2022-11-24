@@ -12,6 +12,7 @@ import {
 } from "../../components/Card/Card-styled";
 import Modal from "../../components/Modal/Modal";
 import Likeveri from "../../helpers/Cardveri/Likeveri";
+import Detailsdelete from "../../helpers/Detailsdelete/Detailsdelete";
 import Messageekleme from "../../helpers/Messageveri/Messageekleme";
 import { HomeCon } from "../Dashboard/Dashboard-styled";
 import { DetailsCom, DetailsInfo, Kapsayici } from "./Details-styled";
@@ -97,16 +98,28 @@ function Details() {
             </Messagdiv>
           </CardLike>
         </Kapsayici>
-        <div className="buttoncon">
-          <button
-            onClick={() => {
-              navigate("/updateblog", { state: { state, data } });
-            }}
-          >
-            UPDATE
-          </button>
-          <button className="delete">DELETE</button>
-        </div>
+        {data.email === email ? (
+          <div className="buttoncon">
+            <button
+              onClick={() => {
+                navigate("/updateblog", { state: { state, data } });
+              }}
+            >
+              UPDATE
+            </button>
+            <button
+              className="delete"
+              onClick={() => {
+                Detailsdelete(state);
+                navigate("/");
+              }}
+            >
+              DELETE
+            </button>
+          </div>
+        ) : (
+          <div></div>
+        )}
       </DetailsCom>
     </HomeCon>
   );
