@@ -9,10 +9,10 @@ function NewBlog() {
   const [url, setUrl] = useState("");
   const [content, setContent] = useState("");
   const { email } = useSelector((s) => s.login);
-  const data = { title, url, content,email };
-  
+  const data = { title, url, content, email };
+
   const navigate = useNavigate();
-  
+
   return (
     <NewBlogCon>
       <img src="images/blok.png" alt="" />
@@ -48,9 +48,10 @@ function NewBlog() {
         id="content"
       ></textarea>
       <button
+        disabled={url && content && title ? false : true}
         onClick={() => {
-          NewBlogyazma(data)
-          navigate("/")
+          NewBlogyazma(data);
+          navigate("/");
         }}
       >
         SUBMIT

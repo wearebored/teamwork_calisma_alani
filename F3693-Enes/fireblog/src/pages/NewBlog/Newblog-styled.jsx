@@ -29,5 +29,8 @@ export const NewBlogCon = styled.div`
     border: solid 0;
     border-radius: 5px;
     color: white;
+    &:disabled{
+      background-color: gray;
+    }
   }
 `;

@@ -6,9 +6,12 @@ export const UpdateCon = styled.div`
   align-items: center;
   gap: 1rem;
   img {
-    border: solid 2px red;
+    /* border: solid 2px red; */
+    margin-top: 2rem;
     height: 15rem;
     width: 30rem;
+    border-radius: 10px;
+    box-shadow: 0 0 30px #1a8f8f;
   }
   input {
     font-size: 1.2rem;
@@ -27,5 +30,8 @@ export const UpdateCon = styled.div`
     border: solid 0;
     border-radius: 5px;
     color: white;
+    &:disabled {
+      background-color: gray;
+    }
   }
 `;

@@ -12,7 +12,7 @@ export const CardCon = styled.div`
   border-radius: 5px;
 `;
 export const CardImage = styled.div`
-  background-color: green;
+  /* background-color: green; */
   overflow: hidden;
   height: 45%;
 

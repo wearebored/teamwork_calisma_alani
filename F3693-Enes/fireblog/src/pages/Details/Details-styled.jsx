@@ -16,7 +16,7 @@ export const DetailsCom = styled.div`
     text-align: center;
   }
   img {
-    background-color: red;
+    /* background-color: red; */
     width: 100%;
     /* height: 30rem; */
   }

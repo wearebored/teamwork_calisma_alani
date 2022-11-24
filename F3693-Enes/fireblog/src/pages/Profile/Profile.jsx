@@ -37,21 +37,17 @@ function Profile() {
     setAge(userdata.age ? userdata.age : "");
     setEmail(userdata.email ? userdata.email : "");
     setGender(userdata.gender ? userdata.gender : "");
-    setImage(userdata.image ? userdata.image : "");
-  }, [
-    uid,
-    userdata.fullname,
-    userdata.age,
-    userdata.email,
-    userdata.gender,
-    userdata.image,
-  ]);
+  }, [uid, userdata.fullname, userdata.age, userdata.email, userdata.gender]);
+  useEffect(() => {
+    userdata && (userdata.image ? setImage(userdata.image) : setImage(""));
+  }, [userdata.image, userdata]);
+
   console.log(data);
   return (
     <div>
       <ProfileCon>
         <PhotoDiv
-          store={image ? image : "https://picsum.photos/1600/900"}
+          store={image === "" ? "https://picsum.photos/1600/900" : image}
         ></PhotoDiv>
         <ImageUrl>
           {update && (
@@ -96,8 +92,8 @@ function Profile() {
                 <select
                   value={gender}
                   onChange={(e) => {
-                    setGender(e.target.value);
-                    setGüncelleme(true);
+                    e.target.value === "Gender" || setGender(e.target.value);
+                    e.target.value === "Gender" || setGüncelleme(true);
                   }}
                 >
                   <option value="Gender">Gender</option>

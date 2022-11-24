@@ -10,6 +10,7 @@ import {
   MessageIcon,
   UserIcon,
 } from "../../components/Card/Card-styled";
+import DeleteModal from "../../components/DeleteModal/DeleteModal";
 import Modal from "../../components/Modal/Modal";
 import Likeveri from "../../helpers/Cardveri/Likeveri";
 import Detailsdelete from "../../helpers/Detailsdelete/Detailsdelete";
@@ -25,6 +26,7 @@ function Details() {
   const [data, setData] = useState("");
   const [keyler, setKeyler] = useState("");
   const [like, setLike] = useState(false);
+  const [del, setDel] = useState(false);
 
   // -----------------------------------
   const dispatch = useDispatch();
@@ -51,9 +53,17 @@ function Details() {
   useEffect(() => {
     likegüncel();
   }, [likegüncel]);
-
+  // Detailsdelete(state);
+  // navigate("/");
   return (
     <HomeCon>
+      {del && (
+        <DeleteModal
+          Detailsdelete={Detailsdelete}
+          state={state}
+          setDel={setDel}
+        />
+      )}
       {modal && <Modal />}
       <DetailsCom>
         <h2>Details</h2>
@@ -110,8 +120,7 @@ function Details() {
             <button
               className="delete"
               onClick={() => {
-                Detailsdelete(state);
-                navigate("/");
+                setDel(true);
               }}
             >
               DELETE
