@@ -1,52 +1,64 @@
-import { CardLike, EmailDiv, LikeIcon, Messagdiv, MessageIcon, UserIcon } from "../../components/Card/Card-styled";
-import { DetailsCom, DetailsInfo, Kapsayici } from "./Details-styled"
-
+import { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
+import {
+  CardLike,
+  EmailDiv,
+  LikeIcon,
+  Messagdiv,
+  MessageIcon,
+  UserIcon,
+} from "../../components/Card/Card-styled";
+import Messageekleme from "../../helpers/Messageveri/Messageekleme";
+import { DetailsCom, DetailsInfo, Kapsayici } from "./Details-styled";
 
 function Details() {
+  const { state } = useLocation();
+  const [data, setData] = useState("");
+
+  useEffect(() => {
+    Messageekleme(state, setData);
+  }, [state]);
+  console.log(data);
+
   return (
     <DetailsCom>
       <h2>Details</h2>
       <Kapsayici>
         <img
-          src="https://www.ahtapotyazilim.com/wp-content/uploads/2021/10/react-js.jpg"
-          alt=""
+          src={data.url}
+          alt={data.url}
         />
         <DetailsInfo>
-          <h5>NodeJS</h5>
-          <span>05.3.2022</span>
+          <h5>{data.title}</h5>
+          <span>{data.date.slice(0,10)}</span>
           <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-            Consequatur, doloribus quas? Odit deserunt quos ratione quasi, hic
-            qui. Odio dolor temporibus, a repellendus illo nemo quo sit ab
-            placeat officiis, neque ipsa. Excepturi, dignissimos quos odio quasi
-            dolores animi provident!
+            {data.content}
           </p>
         </DetailsInfo>
         <CardLike>
           <EmailDiv>
             <UserIcon />
-            <p>enes@gmail.com</p>
+            <p>{data.email}</p>
           </EmailDiv>
           <Messagdiv>
             <LikeIcon />
             <p>
-              {" "}
-              <sup>5</sup>{" "}
+             
+              <sup>{data.like.likesayac}</sup>
             </p>
             <MessageIcon />
             <p>
-              <sup>6</sup>
+              <sup>{data.yorum.yorumsayac}</sup>
             </p>
           </Messagdiv>
         </CardLike>
       </Kapsayici>
-      <div className="buttoncon" >
-       <button>UPDATE</button>
-       <button className="delete">DELETE</button>
-
+      <div className="buttoncon">
+        <button>UPDATE</button>
+        <button className="delete">DELETE</button>
       </div>
     </DetailsCom>
   );
 }
 
-export default Details
+export default Details;

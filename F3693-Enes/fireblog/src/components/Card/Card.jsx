@@ -49,7 +49,7 @@ function Card({ id, veri }) {
     <CardCon>
       <CardImage
         onClick={() => {
-          navigate(`/details/${id}`);
+          navigate(`/details/${id}`, { state: id });
         }}
       >
         <img src={veri.url} alt={veri.title} />
