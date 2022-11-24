@@ -47,3 +47,31 @@ export const ModalClose = styled.button`
   justify-content: center;
   border: solid 1px gray;
 `;
+export const YorumYaz = styled.div`
+  background-color: #bbbbbbb0;
+  height: 10rem;
+  width: 80%;
+  margin-top: 1rem;
+  border-radius: 5px;
+  padding: 1rem;
+  text-align: center;
+  textarea {
+    height: 100%;
+    width: 100%;
+    font-size: 1.5rem;
+    padding: 1rem;
+    resize: none;
+  }
+  button {
+    text-align: center;
+    height: 2rem;
+    padding: 0 1rem;
+    background-color: #fd632b;
+    color: white;
+    border-radius: 5px;
+    border: solid 1px;
+    &:disabled {
+      background-color: #7c7c7c;
+    }
+  }
+`;

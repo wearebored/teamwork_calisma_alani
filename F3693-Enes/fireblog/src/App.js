@@ -24,7 +24,7 @@ function App() {
             <Route path="/newblog" element={<NewBlog />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/updateblog" element={<UpdateBlog />} />
-            <Route path="/details" element={<Details />} />
+            <Route path="/details/:id" element={<Details />} />
           </Route>
           <Route path="/about" element={<About />} />
           <Route path="/login" element={<Login />} />

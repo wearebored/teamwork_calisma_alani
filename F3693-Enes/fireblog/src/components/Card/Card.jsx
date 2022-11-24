@@ -1,5 +1,6 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import { setModal } from "../../app/features/ModalSlice";
 import Likeveri from "../../helpers/Cardveri/Likeveri";
 import {
@@ -16,34 +17,41 @@ import {
 
 function Card({ id, veri }) {
   const { email } = useSelector((s) => s.login);
+  const { modal } = useSelector((s) => s.modal);
   const [like, setLike] = useState(false);
   const [keyler, setKeyler] = useState("");
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
-  const likegüncel = () => {
+  const likegüncel = useCallback(() => {
     if (veri.like?.likes) {
       let sayac = 0;
-      Object.keys(veri.like?.likes).map((e) => {
+      Object.keys(veri.like?.likes).forEach((e) => {
         veri.like?.likes[e].indexOf(email) > -1 && sayac++;
         veri.like?.likes[e].indexOf(email) > -1 && setKeyler(e);
       });
-      console.log(sayac);
+      // console.log(sayac);
       sayac > 0 ? setLike(true) : setLike(false);
     } else {
       setLike(false);
     }
-  };
+    email || setLike(false);
+  }, [email, veri.like?.likes]);
 
   useEffect(() => {
     likegüncel();
-  }, [veri]);
+  }, [likegüncel]);
 
   // console.log(id);
-  console.log(veri);
+  // console.log(veri);
 
   return (
     <CardCon>
-      <CardImage>
+      <CardImage
+        onClick={() => {
+          navigate(`/details/${id}`);
+        }}
+      >
         <img src={veri.url} alt={veri.title} />
       </CardImage>
       <CardData>
@@ -59,14 +67,15 @@ function Card({ id, veri }) {
         <Messagdiv>
           <LikeIcon
             onClick={() => {
-              setLike(!like);
-              Likeveri({
-                id,
-                email,
-                like,
-                keyler,
-                likesayac: veri.like?.likesayac,
-              });
+              email && setLike(!like);
+              email &&
+                Likeveri({
+                  id,
+                  email,
+                  like,
+                  keyler,
+                  likesayac: veri.like?.likesayac,
+                });
             }}
             state={like ? "#ff0000" : "#6e6e6e"}
           />
@@ -75,7 +84,7 @@ function Card({ id, veri }) {
           </p>
           <MessageIcon
             onClick={() => {
-              dispatch(setModal(id));
+              modal || dispatch(setModal(id));
             }}
           />
           <p>

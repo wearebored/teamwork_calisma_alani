@@ -1,3 +1,7 @@
+import { useState } from "react";
+import { useSelector } from "react-redux";
+import Messagedüzenle from "../../helpers/Messageveri/Messagedüzenle";
+import Messagesilme from "../../helpers/Messageveri/Messagesilme";
 import { UserIcon } from "../Card/Card-styled";
 import {
   MeDiv,
@@ -7,39 +11,72 @@ import {
   YorumCon,
   YorumEmail,
 } from "./Comment-styled";
-function Comment() {
+function Comment({ veri, e }) {
+  const { email } = useSelector((s) => s.login);
+  const { modaldata } = useSelector((s) => s.modal);
+  // ---------------
+  const [option, setOption] = useState(false);
+  const [edit, setEdit] = useState(false);
+  const [commantedit, setCommantedit] = useState(veri.comment);
+
+  // console.log(veri);
   return (
     <YorumCon>
       <YorumEmail>
         <UserIcon />
-        <p></p>
+        <p>{veri.email}</p>
 
-        <OptionContainer
-          // onMouseOut={() => {
-          //   setOption(false);
-          // }}
-          // onMouseOver={() => {
-          //   setOption(true);
-          // }}
-        >
-          <OptionIcon />
+        {veri.email === email ? (
+          <OptionContainer
+            onMouseOut={() => {
+              setOption(false);
+            }}
+            onMouseOver={() => {
+              setOption(true);
+            }}
+          >
+            <OptionIcon />
 
-          <OptionListe>
-            <li>Edit</li>
-            <li>Delete</li>
-          </OptionListe>
-        </OptionContainer>
+            <OptionListe state={!option ? "hidden" : "none"}>
+              <li onClick={() => setEdit(true)}>Edit</li>
+              <li
+                onClick={() => {
+                  Messagesilme({ modaldata, e });
+                }}
+              >
+                Delete
+              </li>
+            </OptionListe>
+          </OptionContainer>
+        ) : (
+          <div></div>
+        )}
       </YorumEmail>
       <MeDiv>
-        <div>
-          <textarea type="text" />
-          <div className="buttons">
-            <button>SEND</button>
-            <button className="cancel">CANCEL</button>
+        {edit ? (
+          <div>
+            <textarea
+              onChange={(e) => setCommantedit(e.target.value)}
+              value={commantedit}
+              type="text"
+            />
+            <div className="buttons">
+              <button
+                onClick={() => {
+                  Messagedüzenle({ modaldata, uid: e, commantedit });
+                  setEdit(false);
+                }}
+              >
+                SEND
+              </button>
+              <button className="cancel" onClick={() => setEdit(false)}>
+                CANCEL
+              </button>
+            </div>
           </div>
-        </div>
-
-        <p></p>
+        ) : (
+          <p> {veri.comment} </p>
+        )}
       </MeDiv>
     </YorumCon>
   );
