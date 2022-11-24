@@ -7,6 +7,7 @@ export const DetailsCom = styled.div`
   padding: 0 10rem;
   display: flex;
   flex-direction: column;
+
   /* align-items: center; */
 
   h2 {
@@ -19,7 +20,6 @@ export const DetailsCom = styled.div`
     /* height: 30rem; */
   }
   .buttoncon {
-    
     display: flex;
     align-items: center;
     justify-content: space-evenly;

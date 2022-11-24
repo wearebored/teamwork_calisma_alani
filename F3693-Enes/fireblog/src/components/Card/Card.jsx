@@ -50,11 +50,17 @@ function Card({ id, veri }) {
       <CardImage
         onClick={() => {
           navigate(`/details/${id}`, { state: id });
+          modal && dispatch(setModal());
         }}
       >
         <img src={veri.url} alt={veri.title} />
       </CardImage>
-      <CardData>
+      <CardData
+        onClick={() => {
+          navigate(`/details/${id}`, { state: id });
+          modal && dispatch(setModal());
+        }}
+      >
         <h4>{veri.title}</h4>
         <span>{veri.date?.slice(0, 10)}</span>
         <p>{veri.content}</p>
