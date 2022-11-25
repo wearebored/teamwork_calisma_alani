@@ -2,6 +2,7 @@ import { useState, useEffect, useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { setModal } from "../../app/features/ModalSlice";
+import { setUyari } from "../../app/features/UyariSlice";
 import Likeveri from "../../helpers/Cardveri/Likeveri";
 import {
   CardCon,
@@ -82,6 +83,7 @@ function Card({ id, veri }) {
                   keyler,
                   likesayac: veri.like?.likesayac,
                 });
+              email || dispatch(setUyari("Login to like!"));
             }}
             state={like ? "#ff0000" : "#6e6e6e"}
           />
@@ -90,6 +92,7 @@ function Card({ id, veri }) {
           </p>
           <MessageIcon
             onClick={() => {
+              email || dispatch(setUyari("Login to comment!"));
               modal || dispatch(setModal(id));
             }}
           />
