@@ -36,7 +36,11 @@ export const AboutDiv = styled.div`
 `;
 export const LinkIcon = styled(AiFillLinkedin)`
   font-size: 3rem;
+  color: #ffffff;
+  box-shadow: 2px 2px 5px;
 `;
 export const GitIcon = styled(AiFillGithub)`
   font-size: 3rem;
+  color: #ffffff;
+  box-shadow: 2px 2px 5px;
 `;

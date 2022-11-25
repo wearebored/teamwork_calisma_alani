@@ -1,4 +1,4 @@
-import { AboutCon, AboutDiv, GitIcon, LinkIcon } from "./About-styled"
+import { AboutCon, AboutDiv, GitIcon, LinkIcon } from "./About-styled";
 
 function About() {
   return (
@@ -13,8 +13,12 @@ function About() {
             I've already known JS, ReactJS, React Native, Node MYSQL,Python.
           </p>
           <div>
-            <LinkIcon />
-            <GitIcon />
+            <a href="https://www.linkedin.com/in/enes-goktas/">
+              <LinkIcon />
+            </a>
+            <a href="https://github.com/wearebored">
+              <GitIcon />
+            </a>
           </div>
         </AboutDiv>
       </AboutCon>
@@ -22,4 +26,4 @@ function About() {
   );
 }
 
-export default About
+export default About;
