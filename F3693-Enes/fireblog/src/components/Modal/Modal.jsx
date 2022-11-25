@@ -21,7 +21,7 @@ function Modal() {
   const [comment, setComment] = useState("");
   const [veri, setVeri] = useState("");
   const dispatch = useDispatch();
-  console.log(veri);
+
   useEffect(() => {
     Messageekleme(modaldata, setData);
     Yorumcekme({ setVeri, modaldata });

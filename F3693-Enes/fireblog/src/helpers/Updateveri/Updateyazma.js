@@ -1,7 +1,6 @@
 import { getDatabase, ref, set } from "firebase/database";
 
 function Updateyazma({ url, id, content, title }) {
-  console.log(id);
   const date = new Date().toISOString();
   const db = getDatabase();
   set(ref(db, `blogdata/${id}/content`), content);

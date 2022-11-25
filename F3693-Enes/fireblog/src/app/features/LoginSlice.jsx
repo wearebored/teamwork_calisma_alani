@@ -1,8 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  email: "enesooo78@gmail.com",
-  uid: "KWgIlOQHn5OrcuoTZ61BX98Jn5o2",
+  email: "",
+  uid: "",
 };
 
 const LoginSlice = createSlice({
@@ -10,10 +10,12 @@ const LoginSlice = createSlice({
   initialState,
   reducers: {
     setLogin: (state, action) => {
-      state.email = action.payload;
+      state.email = action.payload.email;
+      state.uid = action.payload.uid;
     },
     setLogout: (state, action) => {
-      state.login = "";
+      state.email = "";
+      state.uid = "";
     },
     setLoginData: (state, action) => {},
   },

@@ -10,8 +10,8 @@ function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-  const { login } = useSelector((store) => store.login);
-  console.log(login);
+  const login = useSelector((store) => store.login.email);
+
   const navigate = useNavigate();
   const dispatch = useDispatch();
   if (login) {
@@ -44,7 +44,7 @@ function Login() {
               }}
               placeholder="Password"
               id="password"
-              type="text"
+              type="password"
             />
             <button
               onClick={() => {

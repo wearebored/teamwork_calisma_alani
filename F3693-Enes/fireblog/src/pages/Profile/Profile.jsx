@@ -42,7 +42,7 @@ function Profile() {
     userdata && (userdata.image ? setImage(userdata.image) : setImage(""));
   }, [userdata.image, userdata]);
 
-  console.log(data);
+  
   return (
     <div>
       <ProfileCon>

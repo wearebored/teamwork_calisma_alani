@@ -13,7 +13,7 @@ function UpdateBlog() {
   // ----------------------------
   const navigate = useNavigate();
   // ------------------------------
-  console.log(state);
+ 
   return (
     <UpdateCon>
       <img src={url} alt={url} />

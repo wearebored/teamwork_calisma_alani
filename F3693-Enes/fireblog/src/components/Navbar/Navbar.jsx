@@ -5,7 +5,7 @@ import { IconDiv, IconList, NavbarCon, Weare } from "./navbar-styled";
 
 function Navbar() {
   const dispatch = useDispatch();
-  const { login } = useSelector((s) => s.login);
+  const { email } = useSelector((s) => s.login);
   const { modal } = useSelector((s) => s.modal);
   return (
     <NavbarCon
@@ -30,7 +30,7 @@ function Navbar() {
           <li>
             <Weare to="/profile"> Profile</Weare>
           </li>
-          {login ? (
+          {email ? (
             <li
               onClick={() => {
                 dispatch(setLogout());

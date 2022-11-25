@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Navigate, useNavigate } from "react-router-dom";
-import { setLogin} from "../../app/features/LoginSlice";
+import { setLogin } from "../../app/features/LoginSlice";
 import GoogleLogin from "../../helpers/GoogleLogin";
 import RegisterFireBase from "../../helpers/RegisterFireBase";
 import {
@@ -20,9 +20,9 @@ function Register() {
   const [error, setError] = useState("");
   const navigate = useNavigate();
   const data = { fullname, gender, age, email, password };
-  const { login } = useSelector((store) => store.login);
-  const dispatch = useDispatch()
- 
+  const login = useSelector((store) => store.login.email);
+  const dispatch = useDispatch();
+
   if (login) {
     return <Navigate to="/" />;
   } else {
@@ -85,7 +85,7 @@ function Register() {
               }}
               placeholder="Password"
               id="password"
-              type="text"
+              type="password"
             />
 
             <button
