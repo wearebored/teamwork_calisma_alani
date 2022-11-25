@@ -22,7 +22,7 @@ export const UyarıConteiner = styled.div`
     box-shadow: 0 0 20px;
     p {
       text-align: center;
-      margin: 1vh;
+      margin: 2vh;
       font-size: 1.2rem;
     }
     main {

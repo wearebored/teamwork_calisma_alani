@@ -22,6 +22,8 @@ export const CardImage = styled.div`
 
   img {
     width: 25rem;
+    
+
   }
 `;
 export const CardData = styled.div`

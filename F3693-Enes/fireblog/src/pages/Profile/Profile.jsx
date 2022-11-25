@@ -42,7 +42,6 @@ function Profile() {
     userdata && (userdata.image ? setImage(userdata.image) : setImage(""));
   }, [userdata.image, userdata]);
 
-  
   return (
     <div>
       <ProfileCon>
@@ -150,7 +149,7 @@ function Profile() {
               setGüncelleme(false);
             }}
           >
-            {update ? "SAVE" : "UPDATE"}
+            {update ? "UPDATE" : "EDİT"}
           </button>
           {/* {update && (
             <button
