@@ -6,7 +6,3 @@ export function writeUserData(data, userId, container) {
     ...data,
   });
 }
-
-function LiveData() {}
-
-export default LiveData;
